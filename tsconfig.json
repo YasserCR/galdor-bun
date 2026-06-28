@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@galdor/core": ["./packages/core/src/index.ts"],
+      "@galdor/core/*": ["./packages/core/src/*"],
+      "@galdor/provider-anthropic": ["./packages/provider-anthropic/src/index.ts"],
+      "@galdor/provider-openai": ["./packages/provider-openai/src/index.ts"],
+      "@galdor/provider-google": ["./packages/provider-google/src/index.ts"],
+      "@galdor/provider-bedrock": ["./packages/provider-bedrock/src/index.ts"],
+      "@galdor/mcp": ["./packages/mcp/src/index.ts"],
+      "@galdor/a2a": ["./packages/a2a/src/index.ts"],
+      "@galdor/dashboard": ["./packages/dashboard/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "**/dist", "debug"]
+}

@@ -1,0 +1,142 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "galdor-bun-workspace",
+      "devDependencies": {
+        "@types/bun": "^1.3.14",
+        "typescript": "^5.9.0",
+      },
+    },
+    "packages/a2a": {
+      "name": "@galdor/a2a",
+      "version": "0.1.0",
+      "dependencies": {
+        "@galdor/core": "workspace:*",
+      },
+    },
+    "packages/cli": {
+      "name": "@galdor/cli",
+      "version": "0.1.0",
+      "bin": {
+        "galdor": "./src/main.ts",
+      },
+      "dependencies": {
+        "@galdor/core": "workspace:*",
+        "@galdor/dashboard": "workspace:*",
+        "@galdor/mcp": "workspace:*",
+        "@galdor/provider-anthropic": "workspace:*",
+        "@galdor/provider-openai": "workspace:*",
+        "zod": "^4.0.0",
+      },
+    },
+    "packages/core": {
+      "name": "@galdor/core",
+      "version": "0.1.0",
+      "dependencies": {
+        "@opentelemetry/api": "^1.9.0",
+        "@opentelemetry/core": "^2.0.0",
+        "@opentelemetry/sdk-trace-base": "^2.0.0",
+        "zod": "^4.0.0",
+      },
+    },
+    "packages/dashboard": {
+      "name": "@galdor/dashboard",
+      "version": "0.1.0",
+      "dependencies": {
+        "@galdor/core": "workspace:*",
+      },
+    },
+    "packages/examples": {
+      "name": "@galdor/examples",
+      "version": "0.1.0",
+      "dependencies": {
+        "@galdor/core": "workspace:*",
+        "@galdor/mcp": "workspace:*",
+        "zod": "^4.0.0",
+      },
+    },
+    "packages/mcp": {
+      "name": "@galdor/mcp",
+      "version": "0.1.0",
+      "dependencies": {
+        "@galdor/core": "workspace:*",
+      },
+      "devDependencies": {
+        "zod": "^4.0.0",
+      },
+    },
+    "packages/provider-anthropic": {
+      "name": "@galdor/provider-anthropic",
+      "version": "0.1.0",
+      "dependencies": {
+        "@galdor/core": "workspace:*",
+      },
+    },
+    "packages/provider-bedrock": {
+      "name": "@galdor/provider-bedrock",
+      "version": "0.1.0",
+      "dependencies": {
+        "@galdor/core": "workspace:*",
+      },
+    },
+    "packages/provider-google": {
+      "name": "@galdor/provider-google",
+      "version": "0.1.0",
+      "dependencies": {
+        "@galdor/core": "workspace:*",
+      },
+    },
+    "packages/provider-openai": {
+      "name": "@galdor/provider-openai",
+      "version": "0.1.0",
+      "dependencies": {
+        "@galdor/core": "workspace:*",
+      },
+    },
+  },
+  "packages": {
+    "@galdor/a2a": ["@galdor/a2a@workspace:packages/a2a"],
+
+    "@galdor/cli": ["@galdor/cli@workspace:packages/cli"],
+
+    "@galdor/core": ["@galdor/core@workspace:packages/core"],
+
+    "@galdor/dashboard": ["@galdor/dashboard@workspace:packages/dashboard"],
+
+    "@galdor/examples": ["@galdor/examples@workspace:packages/examples"],
+
+    "@galdor/mcp": ["@galdor/mcp@workspace:packages/mcp"],
+
+    "@galdor/provider-anthropic": ["@galdor/provider-anthropic@workspace:packages/provider-anthropic"],
+
+    "@galdor/provider-bedrock": ["@galdor/provider-bedrock@workspace:packages/provider-bedrock"],
+
+    "@galdor/provider-google": ["@galdor/provider-google@workspace:packages/provider-google"],
+
+    "@galdor/provider-openai": ["@galdor/provider-openai@workspace:packages/provider-openai"],
+
+    "@opentelemetry/api": ["@opentelemetry/api@1.9.1", "", {}, "sha512-gLyJlPHPZYdAk1JENA9LeHejZe1Ti77/pTeFm/nMXmQH/HFZlcS/O2XJB+L8fkbrNSqhdtlvjBVjxwUYanNH5Q=="],
+
+    "@opentelemetry/core": ["@opentelemetry/core@2.8.0", "", { "dependencies": { "@opentelemetry/semantic-conventions": "^1.29.0" }, "peerDependencies": { "@opentelemetry/api": ">=1.0.0 <1.10.0" } }, "sha512-hd1Lfh8p545nNz+jq1Ejfz+Mn1hyLuxYn1YzTfFNrxr8urEWMNQLPf1Th8kjOH+HxwawCrtgBp8JpBUR4ZSgww=="],
+
+    "@opentelemetry/resources": ["@opentelemetry/resources@2.8.0", "", { "dependencies": { "@opentelemetry/core": "2.8.0", "@opentelemetry/semantic-conventions": "^1.29.0" }, "peerDependencies": { "@opentelemetry/api": ">=1.3.0 <1.10.0" } }, "sha512-qmXQ27ilDbUK/vGMqwL8D4/rhn76C+sherM4wTbjlfknR8Nvfc/hCxjRJPhkzZzUsPiNg16SA31NxMabwttRjg=="],
+
+    "@opentelemetry/sdk-trace-base": ["@opentelemetry/sdk-trace-base@2.8.0", "", { "dependencies": { "@opentelemetry/core": "2.8.0", "@opentelemetry/resources": "2.8.0", "@opentelemetry/semantic-conventions": "^1.29.0" }, "peerDependencies": { "@opentelemetry/api": ">=1.3.0 <1.10.0" } }, "sha512-mhU4jp+vW0mGbFRd+GeXHvmfA4aDqWjBjLC3pE5XMpLs0IE2ryYb019Ts2AQrOq67gaTF25D91+fgvEHDZEnuQ=="],
+
+    "@opentelemetry/semantic-conventions": ["@opentelemetry/semantic-conventions@1.41.1", "", {}, "sha512-/UhIkaZgPutTFmQ7RnIJGgDXZmtEJ7Dvi86xNTFWcnRxVRNk/aotsqDJYeEvDP+FSMB2SdW+pQzNMcWP0rwuNA=="],
+
+    "@types/bun": ["@types/bun@1.3.14", "", { "dependencies": { "bun-types": "1.3.14" } }, "sha512-h1hFqFVcvAvD9j9K7ZW7vd82aSA+rTdznZa+5bwvCwqSB1jmmfLcbIWhOLx1/+boy/xmjgCs/OMUL8hRJSmnPw=="],
+
+    "@types/node": ["@types/node@26.0.1", "", { "dependencies": { "undici-types": "~8.3.0" } }, "sha512-fc3KiUoBt6kie0N9bIW3E47vZsuaMf0PM2AaUpLCLT0s/LvX1nxAim6Fc049cNxODPpGm6qRAuUOB86SkRuPQw=="],
+
+    "bun-types": ["bun-types@1.3.14", "", { "dependencies": { "@types/node": "*" } }, "sha512-4N0ig0fEomHt5R0KCFWjovxow98rIoRwKolrYdCcknNwMekCXRnWEUvgu5soYV8QXtVsrUD8B95MBOZGPvr6KQ=="],
+
+    "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
+
+    "undici-types": ["undici-types@8.3.0", "", {}, "sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ=="],
+
+    "zod": ["zod@4.4.3", "", {}, "sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ=="],
+  }
+}

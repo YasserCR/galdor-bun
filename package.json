@@ -1,0 +1,31 @@
+{
+  "name": "galdor-bun-workspace",
+  "private": true,
+  "type": "module",
+  "description": "galdor-bun — a Bun/TypeScript agent framework. Build, orchestrate and observe AI agents.",
+  "author": {
+    "name": "Yasser Rosas",
+    "email": "yassros16@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "build": "tsc -p packages/core/tsconfig.build.json && tsc -p packages/provider-anthropic/tsconfig.build.json && tsc -p packages/provider-openai/tsconfig.build.json && tsc -p packages/provider-google/tsconfig.build.json && tsc -p packages/provider-bedrock/tsconfig.build.json && tsc -p packages/mcp/tsconfig.build.json && tsc -p packages/a2a/tsconfig.build.json && tsc -p packages/dashboard/tsconfig.build.json",
+    "build:clean": "rm -rf packages/*/dist && bun run build",
+    "version:set": "bun scripts/set-version.ts",
+    "pack": "bun run build && bun scripts/pack.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@galdor/examples",
+  "private": true,
+  "type": "module",
+  "description": "Runnable, offline examples for galdor — each script uses the in-process TestProvider and needs no API keys.",
+  "author": {
+    "name": "Yasser Rosas",
+    "email": "yassros16@gmail.com"
+  },
+  "dependencies": {
+    "@galdor/core": "workspace:*",
+    "@galdor/mcp": "workspace:*",
+    "zod": "^4.0.0"
+  },
+  "version": "0.1.0"
+}

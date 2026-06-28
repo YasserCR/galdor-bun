@@ -1,0 +1,34 @@
+# deps
+node_modules/
+bun.lockb
+
+# build output
+dist/
+dist-tarballs/
+*.tsbuildinfo
+
+# local sandbox: a throwaway consumer project that installs the packed tarballs
+debug/
+
+# local planning / status doc
+PLAN.md
+
+# compiled single-binary
+/galdor
+packages/cli/galdor
+
+# local trace stores
+*.db
+*.db-wal
+*.db-shm
+traces.db
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# editor / OS
+.idea/
+.vscode/
+.DS_Store

@@ -1,0 +1,40 @@
+name: DCO
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  dco-check:
+    name: Verify DCO sign-off
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check DCO sign-off on every commit in the PR
+        run: |
+          base="${{ github.event.pull_request.base.sha }}"
+          head="${{ github.event.pull_request.head.sha }}"
+          missing=0
+          for commit in $(git rev-list "$base".."$head"); do
+            author_name=$(git show -s --format='%an' "$commit")
+            author_email=$(git show -s --format='%ae' "$commit")
+            expected="Signed-off-by: $author_name <$author_email>"
+            if ! git show -s --format='%B' "$commit" | grep -qF "$expected"; then
+              echo "::error::Commit $commit is missing a DCO sign-off"
+              echo "  expected trailer: $expected"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo ""
+            echo "One or more commits are missing a DCO sign-off."
+            echo "Add it with 'git commit -s' (see CONTRIBUTING.md)."
+            exit 1
+          fi
+          echo "All commits are signed off."

@@ -1,0 +1,25 @@
+{
+  "name": "@galdor/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "The galdor command-line tool (scry, ui, cast, doctor).",
+  "author": {
+    "name": "Yasser Rosas",
+    "email": "yassros16@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "bin": {
+    "galdor": "./src/main.ts"
+  },
+  "scripts": {
+    "build": "bun build --compile --target=bun ./src/main.ts --outfile galdor"
+  },
+  "dependencies": {
+    "@galdor/core": "workspace:*",
+    "@galdor/dashboard": "workspace:*",
+    "@galdor/mcp": "workspace:*",
+    "@galdor/provider-anthropic": "workspace:*",
+    "@galdor/provider-openai": "workspace:*",
+    "zod": "^4.0.0"
+  }
+}
